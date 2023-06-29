@@ -65,8 +65,8 @@ INSERT INTO
 user (name, username, password, gender)
 VALUES (
 '${name}',
-'${username}'
-${hashedPassword}',
+'${username}',
+'${hashedPassword}',
 '${gender}'
 )
 ;`;
@@ -326,7 +326,7 @@ DELETE FROM tweet
 WHERE
 tweet.user_id =${user_id} AND tweet.tweet_id =${tweetId}
 ;`;
-    await db.run(delete TweetQuery);
+    await db.run(deleteTweetQuery);
     response.send("Tweet Removed");
   } else {
     response.status(401);
